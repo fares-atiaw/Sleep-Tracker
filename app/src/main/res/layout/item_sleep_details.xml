@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="x"
+            type="com.example.android.trackmysleepquality.database.SleepNight" />
+        <variable
+            name="action"
+            type="com.example.android.trackmysleepquality.sleeptracker.SleepNightListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> action.onClick(x)}"
+        >
+
+        <ImageView
+            android:id="@+id/iv_quality"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="sleep quality description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.487"
+            app:sleepImage="@{x}"
+            tools:srcCompat="@drawable/ic_sleep_5" />
+
+        <TextView
+            android:id="@+id/tv_sleep_quality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:sleepQualityString="@{x}"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/iv_quality"
+            app:layout_constraintStart_toStartOf="@+id/iv_quality"
+            app:layout_constraintTop_toBottomOf="@+id/iv_quality" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_quality"-->
+<!--            android:layout_width="64dp"-->
+<!--            android:layout_height="64dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            app:srcCompat="@drawable/ic_sleep_5"-->
+<!--            app:sleepImage="@{x}"-->
+<!--            android:contentDescription="Quality Description"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_sleep_length"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:text="Today"-->
+<!--            app:sleepDurationFormatted="@{x}"-->
+<!--            android:textSize="16sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/iv_quality"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/iv_quality"-->
+<!--            app:layout_constraintVertical_bias="0.15" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_sleep_quality"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:text="Excellent"-->
+<!--            sleepQualityString="@{x}"-->
+<!--            android:textStyle="bold|italic"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/iv_quality"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tv_sleep_length"-->
+<!--            app:layout_constraintVertical_bias="1.0" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
